@@ -15,6 +15,10 @@ var PORT = 3000;
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
+
+
+
+
 //Basic Route that sends the user
 //==========================================
 app.get('/home', function (req, res){
@@ -26,9 +30,17 @@ app.get('/survey', function (req, res){
 });
 
 
+//ROUTER
+//The below points our server to a series of 'route' files
+//The routes give our server a 'map' of how to respond when users visit
+//or request data from various URLs
+//==========================================================
+// require('./routing/apiRoutes.js')(app);
+// require('./routing/htmlRoutes.js')(app);
 
 
-//Starts the server to begind listening
+//LISTENER
+//Starts the server to begin listening
 //======================
 app.listen(PORT, function(){
     console.log('App listening on PORT ' + PORT);
