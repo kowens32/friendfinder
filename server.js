@@ -15,15 +15,15 @@ var PORT = 3000;
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
-//Basic Route that sends the user
-//==========================================
-app.get('/home', function (req, res){
-    res.sendFile(path.join(__dirname, '/app/public/home.html'));
-});
-
-app.get('/survey', function (req, res){
-    res.sendFile(path.join(__dirname, '/app/public/survey.html'));
-});
+// //Basic Route that sends the user
+// //==========================================
+// app.get('/home', function (req, res){
+//     res.sendFile(path.join(__dirname, '/app/public/home.html'));
+// });
+//
+// app.get('/survey', function (req, res){
+//     res.sendFile(path.join(__dirname, '/app/public/survey.html'));
+// });
 
 
 
