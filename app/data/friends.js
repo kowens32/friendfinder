@@ -1,6 +1,6 @@
 const name = $('#name').val().trim();
 const photo = $('#photo').val().trim();
-const scores =
+const scores = $('#id1 ')
 
 
 
