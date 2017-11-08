@@ -19,7 +19,7 @@ module.exports = function(app) {
     //in each of the below cases when a user visits a link
     //=================================================
 
-    app.get('/api/scores', function(req,res){
+    app.get('/api/friends', function(req,res){
         res.json(scoresArray)
     });
 
@@ -31,7 +31,7 @@ module.exports = function(app) {
     //then the serves saves the data to the tableData array)
     //=====================================================
 
-    app.post('/api/scores', function (req, res) {
+    app.post('/api/friends', function (req, res) {
         scoresArray.push(req.body);
         res.json(true);
     })
