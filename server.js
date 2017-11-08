@@ -15,7 +15,7 @@ var PORT = 3000;
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
-<<<<<<< HEAD
+
 var routing = require('./app/routing/htmlRoutes');
 
 
@@ -31,9 +31,7 @@ routing(app)
 //     res.sendFile(path.join(__dirname, '/app/public/survey.html'));
 // });
 //
-=======
 
->>>>>>> 31de97abe859d8576065ddecf15d65d212477083
 
 
 
@@ -44,8 +42,8 @@ routing(app)
 //The routes give our server a 'map' of how to respond when users visit
 //or request data from various URLs
 //==========================================================
-require('./routing/apiRoutes.js')(app);
-require('./routing/htmlRoutes.js')(app);
+// require('./routing/apiRoutes.js')(app);
+// require('./routing/htmlRoutes.js')(app);
 
 
 //LISTENER

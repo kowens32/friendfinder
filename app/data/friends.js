@@ -1,8 +1,3 @@
-const name = $('#name').val().trim();
-const photo = $('#photo').val().trim();
-const scores = $('#id1 .option').val().trim();
-
-console.log('here i am', scores);
 
 var scoresArray =[
     {

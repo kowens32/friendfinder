@@ -1,7 +1,7 @@
-<<<<<<< HEAD
+
 //A GET route with the url /api/friends. This will be used to display a JSON of all possible friends.
 // A POST routes /api/friends
-=======
+
 //LOAD DATA
 //We are linking our routes to a series of 'data; sources
 //these data sources hold array of information on friends data
@@ -38,4 +38,4 @@ module.exports = function(app) {
 
 
 }
->>>>>>> 31de97abe859d8576065ddecf15d65d212477083
+
