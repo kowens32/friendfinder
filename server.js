@@ -15,6 +15,11 @@ var PORT = 3000;
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
+var routing = require('./app/routing/htmlRoutes');
+
+
+routing(app)
+
 // //Basic Route that sends the user
 // //==========================================
 // app.get('/home', function (req, res){
@@ -24,6 +29,7 @@ app.use(bodyParser.json());
 // app.get('/survey', function (req, res){
 //     res.sendFile(path.join(__dirname, '/app/public/survey.html'));
 // });
+//
 
 
 
