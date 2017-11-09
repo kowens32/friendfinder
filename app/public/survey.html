@@ -16,7 +16,7 @@
 <hr>
 <form>
     <div class="form-group">
-        <label class="col-form-label" for="formGroupExampleInput" id="name" >Name (required)</label>
+        <label class="col-form-label" for="formGroupExampleInput" >Name (required)</label>
         <input type="text" class="form-control" id="formGroupExampleInput" placeholder="">
     </div>
     <div class="form-group">
@@ -163,13 +163,14 @@ $('#submit').on('click', function(event){
 event.preventDefault();
 
     var newFriend = {
-        name: $('#name').val().trim(),
-        photo: $('#photo').val().trim(),
+        name: $('#formGroupExampleInput').val(),
+        photo: $('#formGroupExampleInput2').val(),
         scores: [$('#q1').val(), $('#q2').val(), $('#q3').val(), $('#q4').val(), $('#q5').val(), $('#q6').val(), $('#q7').val(), $('#q8').val(),
             $('#q9').val(), $('#q10').val()]
+
     };
 
-
+console.log('what is my', name);
     $.post('/api/friends', newFriend, function (data) {
         console.log(newFriend);
     })

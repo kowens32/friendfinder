@@ -33,6 +33,7 @@ module.exports = function(app) {
 
     app.post('/api/friends', function (req, res) {
         scoresArray.push(req.body);
+
         res.json(true);
     })
 
