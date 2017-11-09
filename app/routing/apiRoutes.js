@@ -65,7 +65,7 @@ module.exports = function(app) {
 
         }
 
-        scoresArray.push(match);
+        scoresArray.push(req.body);
 
         res.json(match);
     })

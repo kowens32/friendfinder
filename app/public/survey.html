@@ -154,7 +154,7 @@
     <option value="5">5 (Strongly Agree)</option>
 </select>
 <br><br>
-<button type="'submit" class="'btn btn-primary btn-lg btn-block" id ='submit'>Submit</button>
+<button type="'submit" class="'btn btn-primary btn-lg btn-block" id ='submit' data-dismiss="modal">Submit</button>
 
 
     <!-- Modal -->
@@ -194,13 +194,14 @@ event.preventDefault();
             $('#q9').val(), $('#q10').val()]
 
     };
-
+///data is not defined
 
     $.post('/api/friends', newFriend, function (data) {
 
         $('#friend-name').text(data.name);
+        console.log(data.name);
         $('#friend-photo').attr('src', data.photo);
-            $('#myModal').modal('toggle');
+      $('#myModal').modal('toggle');
         });
 
         console.log(newFriend);
