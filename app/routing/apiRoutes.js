@@ -51,9 +51,10 @@ module.exports = function(app) {
         for (i = 0; i < scoresArray.length; i++){
 
             //loop within those friends for the scores
-            for (j = 0; j < scoresArray[i].scores[j]; j++){
+            for (var i = 0; i < scoresArray[i].scores[i]; i++){
 
-        initialDifference = math.abs(parseInt(surveryScores[j] - parseInt(scoresArray[i].scores[j])));
+
+        initialDifference += Math.abs(parseInt(surveryScores[i] - parseInt(scoresArray[i].scores[i])));
 
         if(initialDifference <= match.difference) {
             match.name = scoresArray[i].name;
@@ -64,7 +65,7 @@ module.exports = function(app) {
 
         }
 
-        scoresArray.push(req.body);
+        scoresArray.push(match);
 
         res.json(match);
     })

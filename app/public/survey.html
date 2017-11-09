@@ -200,15 +200,14 @@ event.preventDefault();
 
         $('#friend-name').text(data.name);
         $('#friend-photo').attr('src', data.photo);
-        $(window).load(function(){
-            $('#myModal').modal('show');
+            $('#myModal').modal('toggle');
         });
 
         console.log(newFriend);
         alert('Submitted!');
     })
-})
 
+console.log('diff', data.name);
 
 </script>
 
