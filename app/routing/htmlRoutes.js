@@ -28,22 +28,4 @@ module.exports = function(app) {
         res.sendFile(path.join(__dirname, '/../public/survey.html'));
     });
 
-    app.post('/receive', function (req, res) {
-
-        // All logic here
-
-        function checkMost() {
-            // Checking
-        }
-
-
-
-        function testing() {
-            // testing
-        }
-
-
-        res.json("Ok");
-    });
-
 };

@@ -32,11 +32,66 @@ module.exports = function(app) {
     //=====================================================
 
     app.post('/api/friends', function (req, res) {
+
+        //set variables parsed from the JSON object from the survey
+       var survery = req.body;
+       var surveryScores = req.body.scores;
+
+       //set object to hold the best match
+       var match = {
+           name: '',
+           photo: '',
+           difference: 100
+       };
+
+       //compares scores between those in the database and the latest user survey
+       var initialDifference = 0;
+
+       //loop through the database for the friends
+        for (i = 0; i < scoresArray.length; i++){
+
+            //loop within those friends for the scores
+            for (j = 0; j < scoresArray[i].scores[j]; j++){
+
+        initialDifference = math.abs(parseInt(surveryScores[j] - parseInt(scoresArray[i].scores[j])));
+
+        if(initialDifference <= match.difference) {
+            match.name = scoresArray[i].name;
+            match.photo = scoresArray[i].photo;
+            match.difference = initialDifference;
+        }
+            }
+
+        }
+
         scoresArray.push(req.body);
 
-        res.json(true);
+        res.json(match);
     })
+
+
+
+
+
+
 
 
 }
 
+// app.post('/receive', function (req, res) {
+//
+//     // All logic here
+//
+//     function checkMost() {
+//         // Checking
+//     }
+//
+//
+//
+//     function testing() {
+//         // testing
+//     }
+//
+//
+//     res.json("Ok");
+// });
