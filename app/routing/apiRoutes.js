@@ -34,7 +34,7 @@ module.exports = function(app) {
     app.post('/api/friends', function (req, res) {
 
         //set variables parsed from the JSON object from the survey
-       var survery = req.body;
+       var survey = req.body;
        var surveryScores = req.body.scores;
 
        //set object to hold the best match
