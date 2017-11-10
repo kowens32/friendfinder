@@ -49,7 +49,7 @@ module.exports = function(app) {
 
        //loop through the database for the friends
         for (i = 0; i < friends.length; i++){
-
+            console.log('werer', friends[i].scores[k]);
             //loop within those friends for the scores
             for (var k = 0; k < friends[i].scores[k]; k++){
 
