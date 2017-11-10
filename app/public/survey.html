@@ -196,14 +196,15 @@ event.preventDefault();
     };
 
 
-    $.post('/api/friends', newFriend, function () {
+    $.post('/api/friends', newFriend, function (bestMatch) {
 
-        $('#friend-name').text(newFriend.name);
-        console.log(newFriend.name);
-        $('#friend-photo').attr('src', newFriend.photo);
+        $('#friend-name').text(bestMatch.name);
+        console.log('what is my name',bestMatch.name);
+        console.log(bestMatch.name);
+        $('#friend-photo').attr('src', bestMatch.photo);
       $('#myModal').modal('toggle');
 
-        console.log('what is my name',newFriend.name);
+
         });
 
 

@@ -39,7 +39,7 @@ module.exports = function(app) {
        var userNumbers = req.body.mScores;
 
        //set object to hold the best match
-       var match = {
+       var bestMatch = {
            name: '',
            photo: '',
            difference: 100
@@ -58,18 +58,18 @@ module.exports = function(app) {
 
         initialDifference += Math.abs(parseInt(userNumbers[i] - friends[i].scores[k]));
 console.log('diff', initialDifference);
-        if(initialDifference <= match.difference) {
-            match.name = friends[i].name;
-            match.photo = friends[i].photo;
-            match.difference = initialDifference;
+        if(initialDifference <= bestMatch.difference) {
+            bestMatch.name = friends[i].name;
+            bestMatch.photo = friends[i].photo;
+            bestMatch.difference = initialDifference;
         }
             }
         }
 
         friends.push(userSurvey);
 
-        res.json(match);
-        friends = [];
+        res.json(bestMatch);
+
     });
 };
 
