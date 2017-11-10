@@ -21,6 +21,7 @@ module.exports = function(app) {
 
     app.get('/api/friends', function(req,res){
         res.json(friends)
+        console.log('what is', friends);
     });
 
     //API POST Requests
@@ -35,7 +36,7 @@ module.exports = function(app) {
 
         //set variables parsed from the JSON object from the survey
        var userSurvey = req.body;
-       var userNumbers = req.body.scores;
+       var userNumbers = req.body.mScores;
 
        //set object to hold the best match
        var match = {
@@ -48,34 +49,26 @@ module.exports = function(app) {
        var initialDifference = 0;
 
        //loop through the database for the friends
-        for (i = 0; i < friends.length; i++){
-            console.log('werer', friends[i].scores[k]);
+        for (i = 0; i < friends.length; i++) {
+            console.log(friends[i].name);
+
             //loop within those friends for the scores
             for (var k = 0; k < friends[i].scores[k]; k++){
-
+                console.log('score', friends[i].scores[k]);
 
         initialDifference += Math.abs(parseInt(userNumbers[i] - friends[i].scores[k]));
-
+console.log('diff', initialDifference);
         if(initialDifference <= match.difference) {
             match.name = friends[i].name;
             match.photo = friends[i].photo;
             match.difference = initialDifference;
         }
             }
-
         }
 
-        friends.push(req.body);
+        friends.push(userSurvey);
 
         res.json(match);
-    })
-
-
-
-
-
-
-
-
-}
+    });
+};
 
