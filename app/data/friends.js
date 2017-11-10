@@ -1,6 +1,3 @@
-
-
-
 var friends =[
     {
         "name": '',

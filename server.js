@@ -27,7 +27,7 @@ app.use(bodyParser.json());
 //or request data from various URLs
 //==========================================================
 var routing = require('./app/routing/htmlRoutes');
-routing(app)
+routing(app);
 
 require('./app/routing/apiRoutes.js')(app);
 require('./app/routing/htmlRoutes.js')(app);

@@ -194,19 +194,18 @@ event.preventDefault();
             $('#q9').val(), $('#q10').val()]
 
     };
-///data is not defined
 
-    $.post('/api/friends', newFriend, function (data) {
 
-        $('#friend-name').text(data.name);
-        console.log(data.name);
-        $('#friend-photo').attr('src', data.photo);
+    $.post('/api/friends', newFriend, function () {
+        $('#friend-name').text(newFriend.name);
+        console.log(newFriend.name);
+        $('#friend-photo').attr('src', newFriend.photo);
       $('#myModal').modal('toggle');
 
-        console.log('what is my name',data.name);
+        console.log('what is my name',newFriend.name);
         });
 
-        console.log(newFriend);
+
         alert('Submitted!');
     })
 
