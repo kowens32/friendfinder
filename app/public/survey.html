@@ -190,7 +190,7 @@ event.preventDefault();
     var newFriend = {
         name: $('#formGroupExampleInput').val(),
         photo: $('#formGroupExampleInput2').val(),
-        scores: [$('#q1').val(), $('#q2').val(), $('#q3').val(), $('#q4').val(), $('#q5').val(), $('#q6').val(), $('#q7').val(), $('#q8').val(),
+        mScores: [$('#q1').val(), $('#q2').val(), $('#q3').val(), $('#q4').val(), $('#q5').val(), $('#q6').val(), $('#q7').val(), $('#q8').val(),
             $('#q9').val(), $('#q10').val()]
 
     };
@@ -202,13 +202,13 @@ event.preventDefault();
         console.log(data.name);
         $('#friend-photo').attr('src', data.photo);
       $('#myModal').modal('toggle');
+
+        console.log('what is my name',data.name);
         });
 
         console.log(newFriend);
         alert('Submitted!');
     })
-
-console.log('diff', data.name);
 
 </script>
 

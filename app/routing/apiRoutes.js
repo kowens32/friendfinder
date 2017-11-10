@@ -6,7 +6,7 @@
 //We are linking our routes to a series of 'data; sources
 //these data sources hold array of information on friends data
 //==================================================
-var scoresArray = require('../data/friends.js');
+var friends = require('../data/friends.js');
 
 //===============================================
 //ROUTING
@@ -20,7 +20,7 @@ module.exports = function(app) {
     //=================================================
 
     app.get('/api/friends', function(req,res){
-        res.json(scoresArray)
+        res.json(friends)
     });
 
     //API POST Requests
@@ -34,8 +34,8 @@ module.exports = function(app) {
     app.post('/api/friends', function (req, res) {
 
         //set variables parsed from the JSON object from the survey
-       var survey = req.body;
-       var surveryScores = req.body.scores;
+       var userSurvey = req.body;
+       var userNumbers = req.body.scores;
 
        //set object to hold the best match
        var match = {
@@ -48,24 +48,24 @@ module.exports = function(app) {
        var initialDifference = 0;
 
        //loop through the database for the friends
-        for (i = 0; i < scoresArray.length; i++){
+        for (i = 0; i < friends.length; i++){
 
             //loop within those friends for the scores
-            for (var i = 0; i < scoresArray[i].scores[i]; i++){
+            for (var k = 0; k < friends[i].scores[k]; k++){
 
 
-        initialDifference += Math.abs(parseInt(surveryScores[i] - parseInt(scoresArray[i].scores[i])));
+        initialDifference += Math.abs(parseInt(userNumbers[i] - friends[i].scores[k]));
 
         if(initialDifference <= match.difference) {
-            match.name = scoresArray[i].name;
-            match.photo = scoresArray[i].photo;
+            match.name = friends[i].name;
+            match.photo = friends[i].photo;
             match.difference = initialDifference;
         }
             }
 
         }
 
-        scoresArray.push(req.body);
+        friends.push(req.body);
 
         res.json(match);
     })
@@ -79,20 +79,3 @@ module.exports = function(app) {
 
 }
 
-// app.post('/receive', function (req, res) {
-//
-//     // All logic here
-//
-//     function checkMost() {
-//         // Checking
-//     }
-//
-//
-//
-//     function testing() {
-//         // testing
-//     }
-//
-//
-//     res.json("Ok");
-// });
