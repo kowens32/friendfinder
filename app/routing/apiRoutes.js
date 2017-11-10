@@ -69,6 +69,7 @@ console.log('diff', initialDifference);
         friends.push(userSurvey);
 
         res.json(match);
+        friends = [];
     });
 };
 

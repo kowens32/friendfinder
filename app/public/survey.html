@@ -198,12 +198,12 @@ event.preventDefault();
 
     $.post('/api/friends', newFriend, function () {
 
-        $('#friend-name').text(newFriend.name);
-        console.log(newFriend.name);
-        $('#friend-photo').attr('src', newFriend.photo);
+        $('#friend-name').text(match.name);
+        console.log(match.name);
+        $('#friend-photo').attr('src', match.photo);
       $('#myModal').modal('toggle');
 
-        console.log('what is my name',newFriend.name);
+        console.log('what is my name',match.name);
         });
 
 
