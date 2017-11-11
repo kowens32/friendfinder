@@ -35,34 +35,34 @@ module.exports = function(app) {
     app.post('/api/friends', function (req, res) {
 
         //set variables parsed from the JSON object from the survey
-       var userSurvey = req.body;
-       var userNumbers = req.body.mScores;
+        var userSurvey = req.body;
+        var userNumbers = req.body.mScores;
 
-       //set object to hold the best match
-       var bestMatch = {
-           name: '',
-           photo: '',
-           difference: 100
-       };
+        //set object to hold the best match
+        var bestMatch = {
+            name: '',
+            photo: '',
+            difference: 100
+        };
 
-       //compares scores between those in the database and the latest user survey
-       var initialDifference = 0;
+        //compares scores between those in the database and the latest user survey
+        var initialDifference = 0;
 
-       //loop through the database for the friends
+        //loop through the database for the friends
         for (i = 0; i < friends.length; i++) {
             console.log(friends[i].name);
 
             //loop within those friends for the scores
-            for (var k = 0; k < friends[i].scores[k]; k++){
-                console.log('score', friends[i].scores[k]);
+            for (var k = 0; k < friends[i].mScores[k]; k++){
+                console.log('score', friends[i].mScores[k]);
 
-        initialDifference += Math.abs(parseInt(userNumbers[i] - friends[i].scores[k]));
-console.log('diff', initialDifference);
-        if(initialDifference <= bestMatch.difference) {
-            bestMatch.name = friends[i].name;
-            bestMatch.photo = friends[i].photo;
-            bestMatch.difference = initialDifference;
-        }
+                initialDifference += Math.abs(parseInt(userNumbers[i] - friends[i].mScores[k]));
+                console.log('diff', initialDifference);
+                if(initialDifference <= bestMatch.difference) {
+                    bestMatch.name = friends[i].name;
+                    bestMatch.photo = friends[i].photo;
+                    bestMatch.difference = initialDifference;
+                }
             }
         }
 
